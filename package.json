@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/XMPrime/cl-tic-tac-toe#readme",
   "dependencies": {
+    "boxen": "^5.0.0",
+    "chalk": "^4.1.0",
     "yargs": "^16.2.0"
   }
 }
