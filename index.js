@@ -32,8 +32,6 @@ let board = {
 
 const markSpace = (space) => {
   board[space] = player;
-
-  takeTurn();
 }
 
 const logBoard = () => {
@@ -47,7 +45,10 @@ const logBoard = () => {
   )
 }
 
-const takeTurn = () => {
+const takeTurn = (space) => {
+
+  markSpace(space);
+
   // Update Board
   logBoard();
 
@@ -56,9 +57,11 @@ const takeTurn = () => {
   // console.log(`It's ${player}'s Turn. Which space do you pick (1-9)?`)
 
   game.question(`It's ${player}'s turn. Which space do you pick (1-9)?`, (answer) => {
-    markSpace(answer);
+    takeTurn(answer);
   });
 }
 
-
-takeTurn();
+logBoard();
+game.question(`It's ${player}'s turn. Which space do you pick (1-9)? `, (answer) => {
+  takeTurn(answer);
+});
